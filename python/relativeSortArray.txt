@@ -1,0 +1,9 @@
+class Solution:
+    def relativeSortArray(self, arr1: List[int], arr2: List[int]) -> List[int]:
+        def sk(x):
+            try:
+                return arr2.index(x)
+            except ValueError:
+                return 100001+x
+        arr1.sort(key=sk)
+        return arr1
